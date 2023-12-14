@@ -1,19 +1,17 @@
-import React from "react";
-import { View, Text } from "react-native";
-
+import CurrentWeather from "./components/CurrentWeather";
 
 const App = () => {
+  const temp = 50;
   return (
-    <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
-      {
-        /*
-        the core components are View,Text,...
-        View is like a div or container fluid from bootStrp or <> </> from react
-        */
-      }
-      <Text>Hello</Text>
-    </View>
+
+    <CurrentWeather></CurrentWeather>
+
   )
 }
 
+
+
+
 export default App;
+
+
