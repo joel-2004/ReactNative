@@ -1,13 +1,16 @@
+
 import CurrentWeather from "./components/CurrentWeather";
-
+import UpcomingWeather from "./components/UpcomingWeather";
 const App = () => {
-  const temp = 50;
+
   return (
-
-    <CurrentWeather></CurrentWeather>
-
+    <>
+      <CurrentWeather></CurrentWeather>
+      <UpcomingWeather></UpcomingWeather>
+    </>
   )
 }
+
 
 
 
