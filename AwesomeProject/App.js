@@ -8,7 +8,7 @@ const App = () => {
     <>
       <CurrentWeather></CurrentWeather>
       <UpcomingWeather></UpcomingWeather>
-      <FlatListDemo></FlatListDemo>
+      {/* <FlatListDemo></FlatListDemo> */}
     </>
   )
 }

@@ -17,13 +17,13 @@ const CurrentWeather = () => {
                     <Text style={styles.high}>Low:6</Text>
                 </View>
             </View>
-
+            {/*
             <View style={{ justifyContent: "flex-end", alignItems: "center" }}>
-                {/* to appear on bottom */}
+                {/* to appear on bottom 
                 <Text style={styles.description}>Its sunny</Text>
                 <Text style={styles.description}>Ready to play</Text>
             </View>
-
+    */}
         </>
 
     )

@@ -21,17 +21,16 @@ const Item = ({ id, title }) => {
         </View>
     );
 }
-//flat List supports just plain arrays like const data=["joel","me","etc"],as well as array of objects
-//section list only supports array of objects
+/*flat List supports just plain arrays like const data=["joel","me","etc"],as well as array of objects,
+use flat list for a usual list
+section list only supports array of objects, us e section list when breaking up a list into sections*/
 const FlatListDemo = () => {
 
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
             <Text>Flat List</Text>
-            <FlatList data={DATA} renderItem={({ item }) => <Item id={item.id} title={item.title}></Item>}
-                keyExtractor={item => item.id}
-            ></FlatList>
-            <Text>Hi</Text>
+            <FlatList data={DATA} renderItem={({ item }) => <Item id={item.id} title={item.title}></Item>}></FlatList>
+
         </View>)
 }
 
