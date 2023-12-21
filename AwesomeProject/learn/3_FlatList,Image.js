@@ -2,6 +2,8 @@ import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import { Feather } from "@expo/vector-icons"
 import { ImageBackground } from "react-native";
 
+
+//data
 const DATA = [
     {
         "dt_txt": "2022-08-30 16:00:00",
@@ -42,6 +44,8 @@ const DATA = [
         ]
     }
 ]
+
+//new Component for each of the data
 const Weather = (props) => {
     const { dt_txt, min, max } = props;
     return (
@@ -56,6 +60,7 @@ const Weather = (props) => {
     );
 }
 
+
 const UpcomingWeather = () => {
     const render = ({ item }) => (
         <Weather dt_txt={item.dt_txt} min={item.main.temp_min} max={item.main.temp_max}></Weather>
@@ -63,20 +68,27 @@ const UpcomingWeather = () => {
     return (
         <View style={styles.view}>
             <Text>Upcoming Weather</Text>
+            {/* ImageBackground */}
             <ImageBackground source={require("../assets/weather.jpg")} style={styles.image} >
 
+
+                {/* FlatList */}
                 <FlatList data={DATA} renderItem={render} keyExtractor={(item) => item.dt_txt}></FlatList>
-                {/* <View style={{ flexDirection: "row" }}>
-                <Image source={require("../assets/weather.jpg")} style={styles.image}></Image>
-                <Image source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }} style={styles.image}></Image>
-                 //to get image from an url use uri 
-            </View> */}
+
+                {/* Image */}
+                <View style={{ flexDirection: "row" }}>
+                    <Image source={require("../assets/weather.jpg")} style={styles.image}></Image>
+                    <Image source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }} style={styles.image}></Image>
+                 //to get image from an url use uri
+                </View>
 
             </ImageBackground>
         </View>
     );
 }
 
+
+//styles
 const styles = StyleSheet.create({
     view: {
         flex: 1,

@@ -6,7 +6,7 @@ const App = () => {
 
   return (
     <>
-      <CurrentWeather></CurrentWeather>
+      {/* <CurrentWeather></CurrentWeather> */}
       <UpcomingWeather></UpcomingWeather>
       {/* <FlatListDemo></FlatListDemo> */}
     </>
