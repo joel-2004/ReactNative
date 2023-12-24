@@ -24,15 +24,6 @@ const App = () => {
 
             }
             }>
-                {/* The Tab.Screen component expects either a component prop or children
-         (content inside the <Tab.Screen> tags), but not both. This is due to how React Navigation has designed its API. 
-         So,
-         <Tab.Screen name={"Current"} component={CurrentWeather}>    </Tab.Screen>
-        <Tab.Screen name={"Upcoming"} component={UpcomingWeather}></Tab.Screen>
-        <Tab.Screen name={"City"} component={City}></Tab.Screen>
-        THIS WOULD RESULT IN AN ERROR
-        
-         */}
                 <Tab.Screen
                     name="Current"
                     component={CurrentWeather}
