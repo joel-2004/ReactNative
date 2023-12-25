@@ -15,6 +15,7 @@ const City = ({ weatherData }) => {
             <View style={styles.sunrise}>
                 <Feather name="sunrise" size={24} color="black" />
                 <Text>{formattedSunrise}</Text>
+
                 <Feather name="sunset" size={24} color="black" />
                 <Text>{formattedSunset}</Text>
             </View>
