@@ -2,12 +2,12 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import { weatherType } from "./weatherType";
-
+import moment from "moment"
 const CurrentWeather = ({ weatherData }) => {
 
 
 
-    const { main: { temp, feels_like, temp_max, temp_min }, weather, dt_txt } = weatherData;
+    const { main: { temp, temp_max, temp_min }, weather, dt_txt } = weatherData;
     const weatherCondition = weather[0].main;
 
     return (
@@ -16,7 +16,7 @@ const CurrentWeather = ({ weatherData }) => {
                 <Feather name={weatherType[weatherCondition].icon} size={24}></Feather>
                 <Text style={styles.weather}>Weather </Text>
                 <Text style={styles.temperature}>Temperature {temp}°</Text>
-                <Text style={styles.lastupdate}>Last updated : {dt_txt} </Text>
+                <Text style={styles.lastupdate}>Last updated : {moment(dt_txt).format("MMM Do YYYY, h:mm a")} </Text>
 
                 <View style={{ flexDirection: "row" }}>
                     {/* to appear on same line */}
