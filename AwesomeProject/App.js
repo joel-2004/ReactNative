@@ -10,30 +10,22 @@ import useDataFetch from "./components/useDataFetch"
 const API_KEY = "80306c3cc8aeb385768fd7a4ccd25daa"
 const App = () => {
   const [loading, error, weather] = useDataFetch();
-  console.log(loading)
-  console.log(error);
-  console.log(weather);
-  // if (location) {
-  //   console.log(location);
-  // }
-  if (weather) {
-    console.log(weather);
+
+  if (weather && weather.list) {
+    return (
+      <NavigationContainer>
+        <TabNavigator weather={weather}></TabNavigator>
+      </NavigationContainer>
+
+    )
   }
-
-  // if (loading) {
-  //   return (
-  //     <View style={Styles.loading}>
-  //       <ActivityIndicator size={"large"} color={"blue"} ></ActivityIndicator>
-  //       {/* //loading screen */}
-  //     </View>
-  //   );
-  // }
   return (
-    <NavigationContainer>
-      <TabNavigator></TabNavigator>
-    </NavigationContainer>
+    <View style={Styles.loading}>
+      <ActivityIndicator size={"large"} color={"blue"} ></ActivityIndicator>
+      {/* //loading screen */}
+    </View>
+  );
 
-  )
 }
 
 const Styles = StyleSheet.create({

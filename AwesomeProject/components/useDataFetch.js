@@ -13,12 +13,12 @@ const useDataFetch = () => {
 
     const fetchData = async () => {
         try {
-            const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
             const data = await res.json();
             setWeather(data);
             isLoading(false);
         } catch (error) {
-            console.log(error);
+
         }
     }
 

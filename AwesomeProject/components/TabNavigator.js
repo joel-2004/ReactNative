@@ -6,7 +6,7 @@ import { Feather } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();//initialising the tab object
-const TabNavigator = () => {
+const TabNavigator = ({ weather }) => {
     return (
         <>
             <Tab.Navigator screenOptions={{
@@ -24,9 +24,8 @@ const TabNavigator = () => {
             }>
                 <Tab.Screen
                     name="Current"
-                    component={CurrentWeather}
                     options={{ tabBarIcon: ({ focused }) => <Feather name="sun" color={focused ? "blue" : "grey"}></Feather> }}
-                ></Tab.Screen>
+                >{() => <CurrentWeather weatherData={weather.list[0]}></CurrentWeather>}</Tab.Screen>
                 <Tab.Screen
                     name="Upcoming"
                     component={UpcomingWeather}
