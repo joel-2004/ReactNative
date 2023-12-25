@@ -18,7 +18,7 @@ const useDataFetch = () => {
             setWeather(data);
             isLoading(false);
         } catch (error) {
-
+            setError(error);
         }
     }
 

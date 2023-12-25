@@ -5,24 +5,24 @@ import { weatherType } from "./weatherType";
 
 const CurrentWeather = ({ weatherData }) => {
 
-    console.log(weatherData);
+
 
     const { main: { temp, feels_like, temp_max, temp_min }, weather, dt_txt } = weatherData;
     const weatherCondition = weather[0].main;
-    console.log(weatherCondition)
+
     return (
         <>
             <View style={{ alignItems: "center", flex: 1, backgroundColor: weatherType[weatherCondition].backgroundColor }}>
                 <Feather name={weatherType[weatherCondition].icon} size={24}></Feather>
                 <Text style={styles.weather}>Weather </Text>
-                <Text style={styles.temperature}>Temperature {temp}</Text>
-                <Text style={styles.temperature}>Last updated : {dt_txt} </Text>
+                <Text style={styles.temperature}>Temperature {temp}°</Text>
+                <Text style={styles.lastupdate}>Last updated : {dt_txt} </Text>
 
-                <View style={{ backgroundColor: "yellow", flexDirection: "row" }}>
+                <View style={{ flexDirection: "row" }}>
                     {/* to appear on same line */}
 
-                    <Text style={styles.high}>High:{temp_max}</Text>
-                    <Text style={styles.high}>Low:{temp_min}</Text>
+                    <Text style={styles.high}>High:{temp_max}°</Text>
+                    <Text style={styles.high}>Low:{temp_min}°</Text>
                 </View>
                 <Text style={styles.weather}>{weather[0].description}</Text>
                 <Text style={styles.weather}>{weatherType[weatherCondition].message}</Text>
@@ -49,14 +49,20 @@ const styles = StyleSheet.create({
         margin: 10
     },
     temperature: {
-        backgroundColor: "lime",
+        backgroundColor: "indianred",
+        fontSize: 16,
+        padding: 10,
+        margin: 10
+    },
+    lastupdate: {
+        backgroundColor: "white",
         fontSize: 16,
         padding: 10,
         margin: 10
     },
     high: {
-
-        fontSize: 14,
+        fontWeight: "800",
+        fontSize: 16,
         padding: 10,
         margin: 10
     },

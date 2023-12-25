@@ -28,14 +28,14 @@ const TabNavigator = ({ weather }) => {
                 >{() => <CurrentWeather weatherData={weather.list[0]}></CurrentWeather>}</Tab.Screen>
                 <Tab.Screen
                     name="Upcoming"
-                    component={UpcomingWeather}
+
                     options={{ tabBarIcon: ({ focused }) => <Feather name="navigation" color={focused ? "blue" : "grey"}></Feather> }}
-                ></Tab.Screen>
+                >{() => <UpcomingWeather weatherData={weather.list}></UpcomingWeather>}</Tab.Screen>
                 <Tab.Screen
                     name="City"
-                    component={City}
+
                     options={{ tabBarIcon: ({ focused }) => <Feather name="home" color={focused ? "blue" : "grey"}></Feather> }}
-                ></Tab.Screen>
+                >{() => <City weatherData={weather.city}></City>}</Tab.Screen>
             </Tab.Navigator>
         </>
     );
